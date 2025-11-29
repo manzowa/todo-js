@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A simple Todo list application" />
+  <title>TodoList</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="<%= htmlWebpackPlugin.files.favicon %>" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,400;1,700&display=swap"
+    rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/05141a746a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="todo-app">
+    <h2>App Todo Simple</h2>
+    <form id="todoForm">
+      <input type="text" name="todo" id="todoInput" placeholder="Ajouter une tâche" />
+      <button class="fas fa-plus" type="submit"></button>
+    </form>
+    <ul class="todoList"></ul>
+    <div class="todoBlock"></div>
+  </div>
+
+  <!-- Webpack will inject the JavaScript bundle here -->
+</body>
+
+</html>

@@ -1,14 +1,27 @@
-FROM node:alpine
+# ---- Build Stage ----
+FROM node:alpine AS builder
 
-WORKDIR  usr/app/manzowa-todo-scripts
-COPY .  /usr/app/manzowa-todo-scripts/
+WORKDIR /app
 
-RUN npm install
+# Copy package files
+COPY package.json package-lock.json ./
 
+# Install dependencies
+RUN npm ci
+
+# Copy sources
 COPY . .
-RUN npm run build
 
-ENV PATH=$PATH:/usr/app/manzowa-todo-scripts/node_modules/.bin
-ENV NODE_ENV=development
+# Build the Webpack production bundle
+RUN npm run prod
 
-CMD ["npm start"]
+
+# ---- Nginx Stage ----
+FROM nginx:alpine
+
+# Copy build output (Webpack builds to /dist by default)
+COPY --from=builder /app/dist /usr/share/nginx/html
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]

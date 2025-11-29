@@ -1,31 +1,36 @@
 /*
  * GLobal todo css
  */
-.app-todos{
+.todo-app {
     width: 99%;
     margin: auto;
     box-shadow: 0 1px 2px rgba(60, 64, 67, 0.1), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
-    background:linear-gradient(-20deg, #d0b782 20%, #95a5a6 80%);
-    padding: 0.2rem 0.4rem;
+    background: linear-gradient(-20deg, #d0b782 20%, #95a5a6 80%);
+    padding: 0.1rem 0.4rem;
+
     h2 {
         text-align: center;
         text-transform: uppercase;
+        font-size: 1.5rem;
         font-weight: 700;
     }
+
     form {
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
         margin-bottom: 0.2rem;
+
         input {
             flex: 1;
             margin-left: 1rem;
             margin-right: 0.313rem;
-            padding: 1rem !important;
+            padding: 0.5rem !important;
             outline: 0;
             border: 0.063rem solid #ddd;
             border-radius: 0.2rem;
         }
+
         button {
             border: 0;
             border-radius: 0.2rem;
@@ -33,13 +38,15 @@
             outline: 0;
             background: #2c3e50;
             color: white;
-            padding: 2rem !important;
+            padding: 1.2rem !important;
             margin-right: 1rem !important;
         }
     }
-    ul.todolist {
+
+    ul.todoList {
         list-style: none;
         padding: 0;
+
         li {
             display: flex;
             flex-flow: row nowrap;
@@ -51,17 +58,20 @@
             border-bottom: .1rem solid #95a5a6;
             background-color: #dfe4ea;
             opacity: 0.6;
-            .item--left {
+
+            .itemDisplay {
                 flex: 1;
                 display: flex;
                 flex-flow: row nowrap;
                 align-items: center;
                 justify-content: flex-start;
                 gap: 10px;
+
                 label {
                     flex: 1;
                     color: #2c3e50;
                 }
+
                 input[type="text"] {
                     flex: 1;
                     padding: 0.8rem !important;
@@ -70,17 +80,20 @@
                     border: 1px solid #95a5a6;
                     border-radius: 0.2rem;
                 }
-                input[type="checkbox"]:checked + label {
+
+                input[type="checkbox"]:checked+label {
                     text-decoration-line: line-through;
-                } 
+                }
             }
-            .item--right {
+
+            .itemAction {
                 button {
                     border: none;
                     background-color: unset;
                     color: linear-gradient(-20deg, #d0b782 20%, #95a5a6 80%);
                     margin-left: 1rem;
                     cursor: pointer;
+
                     &.done {
                         cursor: not-allowed;
                         color: #ecf0f1;
@@ -89,41 +102,47 @@
             }
         }
     }
-    div.todotasks {
+
+    div.todoBlock {
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
         align-items: center;
         padding: 0;
         margin: 0.5rem 0.2rem;
-        .tasks--left {
+
+        .taskBlock-display {
             flex: 1 1 1;
             display: flex;
             justify-content: flex-start;
             align-items: center;
             margin-left: 1rem;
+
             span {
                 margin-right: 1rem;
                 padding: 0.6rem;
                 background-color: #d0b782;
                 color: #2c3e50;
+                border-radius: 0.2rem;
             }
         }
-        .tasks--right {
+
+        .taskBlock-action {
             flex: 1 1 1;
             display: flex;
             justify-content: flex-end;
             align-items: center;
+
             button {
-               background-color: #2c3e50;
-               border: 0;
-               border-radius: 0.2rem;
-               cursor: pointer;
-               outline: 0;
-               padding: 1rem;
-               margin-right: .8rem !important;
-               color: white;
-               font-weight: 400;
+                background-color: #2c3e50;
+                border: 0;
+                border-radius: 0.2rem;
+                cursor: pointer;
+                outline: 0;
+                padding: 1rem;
+                margin-right: .8rem !important;
+                color: white;
+                font-weight: 400;
             }
         }
     }
